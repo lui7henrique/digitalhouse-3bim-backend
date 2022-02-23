@@ -28,7 +28,7 @@ public class MainTest {
         estagiario1 = new Estagiario("Harry");
         estagiario1.vender(1);
 
-        estagiario2 = new Estagiario("Roni");
+        estagiario2 = new Estagiario("Rony");
         estagiario2.vender(5);
 
         estagiario3 = new Estagiario("Hermione");
