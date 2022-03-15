@@ -11,9 +11,9 @@ public class Main {
                 )
         );
 
-       Medicamento medicamento = new Medicamento(
-               "Ibuprofeno","Aché", 395, 300.00
-       );
+        Medicamento medicamento = new Medicamento(
+                "Ibuprofeno","Aché", 395, 300.00
+        );
 
 
         medicamentoService.salvar(medicamento);
