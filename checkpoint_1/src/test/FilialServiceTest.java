@@ -29,11 +29,36 @@ public class FilialServiceTest {
         LOGGER.info("Cadastrando a filial no H2...");
 
 
-        Filial filial = new Filial(
-                "Teste", "Rua Hilda Smith do Amaral", true
+        // teste 1
+        Filial filial1 = new Filial(
+                "Filial 1", "Rua dos Testes", true
         );
+        Filial filial1Salvo = filialService.salvar(filial1);
 
-        Filial filialSalvo = filialService.salvar(filial);
+
+        // teste 2
+        Filial filial2 = new Filial(
+                "Filial 2", "Rua do XML", true
+        );
+        Filial filial2Salvo = filialService.salvar(filial2);
+
+        // teste 3
+        Filial filial3 = new Filial(
+                "Filial 3", "Rua do Tempo de Compilação", true
+        );
+        Filial filial3Salvo = filialService.salvar(filial3);
+
+        // teste 4
+        Filial filial4 = new Filial(
+                "Filial 4", "Rua da Verbosidade", true
+        );
+        Filial filial4Salvo = filialService.salvar(filial4);
+
+        // teste 5
+        Filial filial5 = new Filial(
+                "Filial 5", "Rua do Javascript", true
+        );
+        Filial filial5Salvo = filialService.salvar(filial5);
     }
 
 
