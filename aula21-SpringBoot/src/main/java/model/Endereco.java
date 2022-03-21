@@ -20,12 +20,15 @@ public class Endereco {
         this.estado = estado;
     }
 
-    public Endereco(String rua, String numero, String bairro, String cidade, String estado) {
+    public Endereco(String rua, int numero, String bairro, String cidade, String estado) {
         this.rua = rua;
-        this.numero = numero;
+        this.numero = String.valueOf(numero);
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
+    }
+
+    public Endereco(int id, String nome, String email, int numMatricula, int atendeConvenio) {
     }
 
     public Integer getId() {

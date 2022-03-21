@@ -5,6 +5,7 @@ import dao.config.ConfigJDBC;
 import model.Dentista;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,5 +47,45 @@ public class DentistaDaoH2 implements IDao<Dentista> {
 
         return null;
     }
+
+
+    @Override
+    public List<Dentista> buscarTodos(){
+        Connection connection = configJDBC.conectarComBancoDeDados();
+        PreparedStatement pstmt = null;
+
+        String query = "SELECT * FROM dentistas";
+        List<Dentista> dentistas = new ArrayList<>();
+
+        try {
+            pstmt = connection.prepareStatement(query);
+            ResultSet result = pstmt.executeQuery();
+
+            while(result.next()){
+                dentistas.add(criarObjetoDentista(result));
+            }
+
+            pstmt.close();
+            connection.close();
+
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+
+        return dentistas;
+    }
+
+
+    private Dentista criarObjetoDentista(ResultSet result) throws SQLException {
+        return new Dentista(
+                result.getInt("id"),
+                result.getString("nome"),
+                result.getString("email"),
+                result.getInt("numMatricula"),
+                result.getInt("atendeConvenio")
+        );
+    }
+
+
 
 }

@@ -15,4 +15,8 @@ public class DentistaService {
         dentistaIDao.salvar(dentista);
         return dentista;
     }
+
+    public List<Dentista> buscarTodos(){
+        return dentistaIDao.buscarTodos();
+    }
 }

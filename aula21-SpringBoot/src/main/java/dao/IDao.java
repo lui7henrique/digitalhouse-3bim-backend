@@ -8,7 +8,7 @@ public interface IDao<T> {
 
     // public Optional<T> buscar(Integer id);
     // public void excluir(Integer id);
-    // public List<T> buscarTodos();
+    public List<T> buscarTodos();
     // public T atualizar(T t);
 
 }
